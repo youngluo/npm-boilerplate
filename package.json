@@ -1,0 +1,49 @@
+{
+  "name": "logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src --ext .ts --fix",
+    "test": "",
+    "commit": "git add -A && git-cz",
+    "release-major": "standard-version -r major",
+    "release-minor": "standard-version -r minor",
+    "release-patch": "standard-version -r patch"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.xwfintech.com/youngluo/logger.git"
+  },
+  "keywords": [
+    "logger"
+  ],
+  "author": "young",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.0",
+    "@commitlint/config-conventional": "^7.6.0",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "husky": "^2.2.0",
+    "pre-commit": "^1.2.2",
+    "standard-version": "^6.0.1",
+    "typescript": "^3.4.5"
+  }
+}
