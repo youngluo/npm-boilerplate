@@ -12,7 +12,10 @@
     "import"
   ],
   "rules": {
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
     "class-methods-use-this": "off",
     "import/prefer-default-export": "off",
     "import/no-unresolved": "off",
@@ -31,7 +34,9 @@
     "no-empty-function": [
       "error",
       {
-        "allow": ["constructors"]
+        "allow": [
+          "constructors"
+        ]
       }
     ],
     "newline-before-return": "error",
@@ -39,13 +44,26 @@
       "error",
       {
         "blankLine": "always",
-        "prev": ["const", "let", "var", "block-like"],
+        "prev": [
+          "const",
+          "let",
+          "var",
+          "block-like"
+        ],
         "next": "*"
       },
       {
         "blankLine": "never",
-        "prev": ["const", "let", "var"],
-        "next": ["const", "let", "var"]
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": [
+          "const",
+          "let",
+          "var"
+        ]
       }
     ],
     "object-curly-newline": [
@@ -62,7 +80,8 @@
       }
     ],
     "camelcase": [
-      "error", {
+      "error",
+      {
         "ignoreDestructuring": true,
         "properties": "never"
       }
