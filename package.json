@@ -1,5 +1,5 @@
 {
-  "name": "logger",
+  "name": "@xwfintech/logger",
   "version": "0.0.0",
   "description": "",
   "main": "./lib/koa.js",
