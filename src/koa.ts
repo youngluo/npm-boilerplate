@@ -1,6 +1,6 @@
 import * as uuidv4 from 'uuid/v4';
 import { Context } from 'koa';
-import { LoggerFactory, LoggerOptions, LoggerMethods } from '../index';
+import { LoggerFactory, LoggerOptions, LoggerMethods } from './node';
 
 interface LoggerContext extends Context {
   logger: LoggerMethods

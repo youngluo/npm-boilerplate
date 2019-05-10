@@ -2,11 +2,11 @@
   "name": "logger",
   "version": "0.0.0",
   "description": "",
-  "main": "./dist/index.js",
+  "main": "./lib/koa.js",
   "scripts": {
     "dev": "ts-node -r tsconfig-paths/register test/index.ts",
     "dev:koa": "ts-node -r tsconfig-paths/register test/koa.ts",
-    "build": "shx rm -rf dist && tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "test": "",
     "commit": "git add -A && git-cz",
     "release-major": "yarn build && standard-version -r major",

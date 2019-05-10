@@ -1,5 +1,5 @@
 import * as Koa from 'koa';
-import logger from '../dist/koa';
+import logger from '../lib/koa';
 
 const app = new Koa();
 
