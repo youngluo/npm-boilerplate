@@ -1,13 +1,14 @@
 import * as uuidv4 from 'uuid/v4';
 import { Context } from 'koa';
-import { loggerFactory, LoggerOptions } from '../index';
+import { LoggerFactory, LoggerOptions, LoggerMethods } from '../index';
 
-export default (project: string, callback?: (ctx: Context, logId: string) => void) => (
-  async (ctx: Context, next: Function) => {
+interface LoggerContext extends Context {
+  logger: LoggerMethods
+}
+
+export default (project: string, callback?: (ctx: LoggerContext, logId: string) => void) => (
+  async (ctx: LoggerContext, next: Function) => {
     const logId = ctx.get('Log-ID') || uuidv4();
-
-    if (callback) callback(ctx, logId);
-
     const defaultOptions: LoggerOptions = {
       remote_service: ctx.get('Remote-Service'),
       merchant_code: ctx.get('Merchant-Code'),
@@ -18,7 +19,8 @@ export default (project: string, callback?: (ctx: Context, logId: string) => voi
       project
     };
 
-    ctx.logger = loggerFactory(defaultOptions);
+    ctx.logger = LoggerFactory(defaultOptions);
+    if (callback) callback(ctx, logId);
 
     await next();
   }

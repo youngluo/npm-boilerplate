@@ -55,13 +55,10 @@ function getCallerPosition() {
   return '-';
 }
 
-export function loggerFactory(defaultOptions?: LoggerOptions) {
+export function LoggerFactory(defaultOptions?: LoggerOptions) {
   const log = (options: LoggerOptions) => {
-    const curOptions = _.assign(defaultOptions, options);
-    const extra = JSON.stringify(_.get(curOptions, 'extra'));
-
     // eslint-disable-next-line no-console
-    console.log(_.assign({
+    console.log(JSON.stringify(_.assign({
       file: getCallerPosition(),
       log_id: '',
       merchant_code: '',
@@ -74,18 +71,16 @@ export function loggerFactory(defaultOptions?: LoggerOptions) {
       project: '',
       status: 200,
       level: '',
-      extra,
+      extra: '',
       code: 0,
       msg: 'success'
-    }, curOptions));
+    }, defaultOptions, options)));
   };
   const logger = {} as LoggerMethods;
 
   _.forEach(loggerLevels, (level) => {
     const loggerPredicate = (msg: string, options: LoggerOptions) => {
-      const message = _.isString(msg) ? msg : JSON.stringify(msg);
-
-      log(_.assign(options, { msg: message, level }));
+      log(_.assign(options, { msg, level }));
     };
 
     _.set(logger, _.lowerCase(level), loggerPredicate);
@@ -94,4 +89,4 @@ export function loggerFactory(defaultOptions?: LoggerOptions) {
   return logger;
 }
 
-export default loggerFactory();
+export default LoggerFactory();
