@@ -2,7 +2,10 @@
 
 ## 安装
 
-`npm install @xwfintech/logger`
+```sh
+npm config set @xwfintech:registry http://xwnpm.xwfintech.com
+npm install @xwfintech/logger
+```
 
 ## 使用
 
@@ -29,7 +32,10 @@ interface LoggerOptions {
 ### koa
 
 ```ts
-const logger = require('@xwfintech/logger');
+// es6
+import logger from '@xwfintech/logger';
+// es5
+const logger = require('@xwfintech/logger').default;
 const Koa = require('koa');
 const app = new Koa();
 
@@ -49,7 +55,10 @@ ctx.logger.error(msg: string, options?: LoggerOptions);
 ## node（普通调用）
 
 ```ts
-const logger = require('@xwfintech/logger/lib/node');
+// es6
+import logger from '@xwfintech/logger/lib/node';
+// es5
+const logger = require('@xwfintech/logger/lib/node').default;
 
 logger.debug(msg: string, options?: LoggerOptions);
 logger.info(msg: string, options?: LoggerOptions);
