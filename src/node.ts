@@ -5,28 +5,28 @@ import * as _ from 'lodash';
 const loggerLevels = ['DEBUG', 'INFO', 'WARN', 'ERROR'];
 
 export interface LoggerOptions {
-  file?: string,
-  log_id?: string,
-  merchant_code?: string,
-  time?: string,
-  remote_service?: string,
-  user_agent?: string,
-  url_path?: string,
-  method?: string,
-  cost_time?: string,
-  project?: string,
-  status?: number,
-  level?: string,
-  extra?: any,
-  code?: number,
-  msg?: string
+  file?: string;
+  log_id?: string;
+  merchant_code?: string;
+  time?: string;
+  remote_service?: string;
+  user_agent?: string;
+  url_path?: string;
+  method?: string;
+  cost_time?: string;
+  project?: string;
+  status?: number;
+  level?: string;
+  extra?: any;
+  code?: number;
+  msg?: string;
 }
 
 export interface LoggerMethods {
-  debug(msg: string, options?: LoggerOptions): void,
-  info(msg: string, options?: LoggerOptions): void,
-  warn(msg: string, options?: LoggerOptions): void,
-  error(msg: string, options?: LoggerOptions): void,
+  debug(msg: string, options?: LoggerOptions): void;
+  info(msg: string, options?: LoggerOptions): void;
+  warn(msg: string, options?: LoggerOptions): void;
+  error(msg: string, options?: LoggerOptions): void;
 }
 
 function getException() {

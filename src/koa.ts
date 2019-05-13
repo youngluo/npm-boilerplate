@@ -3,7 +3,7 @@ import { Context } from 'koa';
 import { LoggerFactory, LoggerOptions, LoggerMethods } from './node';
 
 interface LoggerContext extends Context {
-  logger: LoggerMethods
+  logger: LoggerMethods;
 }
 
 export default (project: string, callback?: (ctx: LoggerContext, logId: string) => void) => (

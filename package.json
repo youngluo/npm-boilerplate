@@ -9,6 +9,7 @@
     "build": "tsc -p tsconfig.json",
     "test": "",
     "commit": "git add -A && git-cz",
+    "publish": "npm publish --registry http://xwnpm.xwfintech.com",
     "release-major": "yarn build && standard-version -r major",
     "release-minor": "yarn build && standard-version -r minor",
     "release-patch": "yarn build && standard-version -r patch"
@@ -42,7 +43,6 @@
   "devDependencies": {
     "@commitlint/cli": "^7.6.0",
     "@commitlint/config-conventional": "^7.6.0",
-    "@types/koa": "^2.0.48",
     "@types/lodash": "^4.14.124",
     "@types/moment": "^2.13.0",
     "@types/uuid": "^3.4.4",
@@ -62,6 +62,7 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
+    "@types/koa": "^2.0.48",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "uuid": "^3.3.2"
