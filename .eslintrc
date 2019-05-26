@@ -4,12 +4,14 @@
     "project": "./tsconfig.json"
   },
   "env": {
+    "jest/globals": true,
     "node": true
   },
   "extends": "airbnb-base",
   "plugins": [
     "@typescript-eslint",
-    "import"
+    "import",
+    "jest"
   ],
   "rules": {
     "comma-dangle": [
